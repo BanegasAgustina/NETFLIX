@@ -1,0 +1,260 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: #ffffff;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 26px 56px;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
+header a.logo {
+  display: block;
+}
+.logo svg {
+  fill: #e60914;
+  height: 37px;
+}
+
+header .btns {
+  text-align: right;
+}
+
+header a.btn {
+  display: inline-block;
+  background-color: #e60914;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 0px 6px 0px;
+
+  border-radius: 3px;
+}
+header .traduc select{
+    background: transparent;
+    color: #ffffff;
+    padding: 6px 17px;
+    border-radius: 3px;
+}
+header .traduc{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+header .traduc svg {
+height: 20px;
+color: #ffffff;
+position: absolute;
+margin-top: 5px;
+margin-left: 4px;
+
+}
+.fondo {
+  position: relative;
+}
+.fondo .desenfoque{
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  position: absolute;
+  inset: 0;
+}
+.fondo .back img{
+max-width: 100%;
+opacity: 0.6;
+}
+
+.text-h{
+  margin-top: -100px;
+  max-width: 1200px;
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  display: grid;
+  margin-left: -600px;
+  align-items: center;
+  text-align: center;
+}
+.text-h h1,.text-h h2,.text-h h3{
+  font-weight: normal;
+}
+.text-h h1{
+  font-size: 3rem;
+  font-weight: 1000;
+  font-stretch: expanded; 
+}
+.text-h h2{
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 16px;
+}
+.text-h h3{
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/*COMENZAR*/
+
+.text-h form{
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr max-content ;
+}
+ 
+
+.text-h input{
+  background-color:hsl(none 0% 0% / 0.3);
+  border-color: #ffffff 1px;
+  color: #ffffff;
+  font-size: medium;
+  padding:24px 16px 8px ;
+  font-size: 1.2rem ;
+}
+
+.text-h button{
+font-size: 1.625rem;
+padding:  6px 26px;
+background-color: #e60914;
+border: #e60914;
+border-radius: 4px;
+color: #ffffff;
+margin-left: 10px;
+}
+
+/*IMGENES Y VIDEOS*/
+
+section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:46px;
+  padding: 70px 35px;
+  align-items: center;
+  border-top:8px solid #222 ;
+}
+.ultima{
+  border-bottom:8px solid #222 ;
+}
+.texts h1{
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.texts p{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.img-video{
+  position: relative;
+}
+.img-video .n1 img{
+width: 400px;
+}
+
+.n1 video{
+  width: 465px;
+  position: absolute;
+  top: 100px;
+  left: 85px;
+}
+/*este codigo hace que los elementos pares se ordenen en la segunda fila :)*/
+section:nth-child(even) div.texts {
+  order: 2;
+}
+
+section div.img-video.n3 img{
+  width: 650px;
+  position: relative;
+  z-index: 5;
+  }
+  
+  .n3 video{
+    width: 400px;
+    position: absolute;
+    top: 50px;
+    left: 120px;
+  }
+
+
+  /*PREGUNTAS FRECUENTES*/
+ 
+  .pf{
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.pf h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.acordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+
+.acordion li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+
+}
+
+.acordion li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.acordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.acordion input[type="radio"]:checked + label +.content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+
+.acordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+
+.faq small{
+    font-size: 13px;
+}
+
